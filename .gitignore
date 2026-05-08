@@ -1,0 +1,12 @@
+# Visual Studio
+.vs/
+*.user
+x64/
+Debug/
+Release/
+*.vcxproj.user
+
+# Compiled output
+*.exe
+*.obj
+*.pdb
