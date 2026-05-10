@@ -21,15 +21,15 @@ void SLCheckCapacity(SL* ps)
 		ps->capacity = NewCapacity;
 	}
 }
-//打印顺序表
+/*//打印顺序表
 void SLPrint(SL* ps)
 {
 	for (int i = 0; i < ps->size; i++)
 	{
-		printf("%d", ps->arr[i]);
+		printf("%d ", ps->arr[i]);
 	}
 	printf("\n");
-}
+}*/
 
 //初始化
 void SLInit(SL* ps)
@@ -91,3 +91,47 @@ void SLPopFront(SL* ps)
 	}
 	ps->size--;
 }
+
+//指定位置插入
+void SLInsert(SL* sl, int pos, SLData x)
+{
+	assert(sl != NULL);
+	assert(pos >= 0 && pos <= sl->size);
+	SLCheckCapacity(sl);
+	for (int i = sl->size; i > pos; i--)
+	{
+		sl->arr[i] = sl->arr[i - 1];
+	}
+	sl->arr[pos] = x;
+	sl->size++;
+}
+
+//删除指定位置数据
+void SLErase(SL* sl, int pos)
+{
+	assert(sl != NULL);
+	assert(pos >= 0 && pos < sl->size);
+	SLCheckCapacity(sl);
+	for (int i = pos; i < sl->size-1; i++)
+	{
+		sl->arr[i] = sl->arr[i + 1];
+
+	}
+	sl->size--;
+}
+
+/*//查找
+void SLFind(SL* sl, SLData x)
+{
+	assert(sl != NULL);
+	for (int i = 0; i < sl->size; i++)
+	{
+		if (sl->arr[i] == x)
+		{
+			printf("找到了，下标为%d", i);
+			return 0;
+		}
+	}
+	printf("不存在");
+}
+*/

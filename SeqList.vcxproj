@@ -123,10 +123,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Contact.c" />
     <ClCompile Include="SeqList.c" />
     <ClCompile Include="test.c" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Contact.h" />
     <ClInclude Include="SeqList.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
